@@ -145,12 +145,12 @@
   @media(max-width:640px){.speaker{flex-direction:column;align-items:center;text-align:center}.speaker-photo{max-width:170px}}
 
   /* ---------- フォーム ---------- */
-  .form-slot{
-    border:2px dashed var(--blue);border-radius:8px;
-    padding:44px 26px;background:var(--white);color:var(--gray);font-size:14px;line-height:1.9;text-align:center;
+  .form-embed{
+    background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:24px;max-width:720px;margin:0 auto;
   }
-  .form-slot b{color:var(--ink-head)}
-  .form-slot code{background:var(--bg);border:1px solid var(--line);padding:2px 8px;border-radius:4px;font-size:13px}
+  .form-embed iframe{display:block;width:100%;border:0}
+  .form-note{text-align:center;color:var(--gray);font-size:13.5px;margin-top:16px}
 
   /* ---------- フッター ---------- */
   footer{background:#1b2733;color:#c5d0db;text-align:center;padding:36px 24px}
@@ -289,16 +289,14 @@
   <div class="inner">
     <span class="sec-label">FORM</span>
     <h2 class="sec-head center">申し込みフォーム</h2>
-    <div class="form-slot">
-      <b>Tallyフォームをここに埋め込みます。</b><br><br>
-      公開後の埋め込みコードを <code>&lt;iframe&gt;</code> でこの位置に差し込んでください。<br>
-      （例: <code>&lt;iframe data-tally-src="https://tally.so/r/xxxxx" ...&gt;</code>）<br><br>
-      ※日程が合わない方も、お申し込みいただければ後日ご案内します。
+    <!-- Tally埋め込み（Form ID: kdp5bZ） -->
+    <div class="form-embed">
+      <iframe data-tally-src="https://tally.so/embed/kdp5bZ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
+              title="セミナー申し込みフォーム"></iframe>
     </div>
-    <!-- ↓Tallyフォーム実装後は、フォーム自体の送信ボタンに置き換え -->
-    <div class="cta-wrap">
-      <a href="#form" class="btn">この内容で申し込む（無料）</a>
-    </div>
+    <p class="form-note">※日程が合わない方も、お申し込みいただければ後日ご案内します。</p>
+    <script>(function(){var d=document,s="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc});};if("undefined"!=typeof Tally)v();else if(null==d.querySelector('script[src="'+s+'"]')){var j=d.createElement("script");j.src=s,j.onload=v,j.onerror=v,d.body.appendChild(j);}})();</script>
   </div>
 </section>
 </main>
